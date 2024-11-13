@@ -5,12 +5,16 @@ img {
     object-fit: cover; 
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
     display: block;
-    margin: 0 20%;
+    margin: 0;
+    margin-left:20%; 
+    margin-right:5%; 
 }
 #name_banner{
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 #name_banner h1{
-    font-size:300%;
+    font-size:350%;
+    margin:0;
 }
