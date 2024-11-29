@@ -1,6 +1,6 @@
-img {
-    width: 250px;
-    height: 250px; 
+.profile {
+    width: 20vw;
+    height: 20vw; 
     border-radius: 50%; 
     object-fit: cover; 
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
@@ -9,12 +9,259 @@ img {
     margin-left:20%; 
     margin-right:5%; 
 }
+.personal_home{
+  object-fit: cover;
+  width: 30vw;
+  height: 30vw; 
+}
 #name_banner{
     display: flex;
     align-items: center;
     gap: 10px;
 }
 #name_banner h1{
-    font-size:350%;
+    font-size:5vw;
+    font-family: "Pangolin";
     margin:0;
+    color:#251555;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #9a8fe5; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 3.5s steps(35, end),
+        blink-caret .75s step-end infinite;
+}
+#bio p{
+    font-family: "Gentium Book Plus";
+    font-size:140%;
+}
+#bio{
+    margin: 1% 5%; 
+    text-align: center;
+}
+*{
+    background-color: #f8f4ff;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 32% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #9a8fe5; }
+}
+.flip-box {
+    background-color: transparent;
+    width: 20vw;
+    height: 20vw; 
+    border: 1px solid #f1f1f1;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 20vw;
+    height: 20vw; 
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-box-front {
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  nav a{
+    font-family: "Gentium Book Plus";
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Makes the navbar sticky */
+    top: 0; /* Sticks the navbar at the top of the page */
+    background-color: #f8f4ff; /* Ensure the navbar background remains visible when scrolling */
+    z-index: 1000; /* Keeps it on top of other content */
+    padding-bottom:15px;
+    padding-top:15px;
+  }
+
+  nav a i{
+    color:black;
+    font-size: 1.5rem;
+  }
+  nav a i:hover{
+    color:#a6077b;
+    font-size: 1.5rem;
+  }
+  .icon {
+    margin-left: 10px; /* Adds space between icons */
+  }
+  
+  .nav-left {
+    display: flex;
+    gap: 10px; /* Adds space between left-aligned links */
+  }
+  
+  .nav-right {
+    display: flex;
+    gap: 10px; /* Adds space between icons */
+  }
+
+  .nav-center {
+    position: absolute; /* Position it independently of the flex container */
+    left: 50%; /* Move to the center horizontally */
+    transform: translateX(-50%); /* Adjust for element width */
+  }
+
+  nav a:hover{
+    font-style:italic;
+    font-weight:bold;
+    color:#a6077b;
+  }
+
+  nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+  }
+
+  .nav-left, .nav-right {
+    justify-content: center;
+    margin-bottom: 10px; /* Add spacing between groups */
+  }
+
+  .nav-center {
+    position: static; /* Disable absolute positioning */
+    transform: none; /* Reset transformation */
+    margin-bottom: 10px;
+  }
+
+@media (min-width: 800px) {
+  nav {
+    flex-direction: row; /* Items aligned horizontally for larger screens */
+    align-items: center; /* Center-align items */
+  }
+
+  .nav-left, .nav-right {
+    justify-content: space-between;
+    margin-bottom: 0; /* Remove extra spacing for larger screens */
+  }
+
+  .nav-center {
+    position: absolute; /* Keep it centered horizontally */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for element width */
+    margin-bottom: 0;
+  }
+}
+
+nav #homeicon{
+  color:purple;
+}
+
+#blogheader {
+  position: relative; 
+  color: white; 
+  padding: 100px 20px;
+  text-align: center;
+  height: 10vh; 
+  z-index: 1; 
+}
+
+#blogheader::before {
+  content: ""; /* Pseudo-element requires content */
+  background-image: url('../img/coi.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+
+  position: absolute; /* Allows it to fill the #blogheader */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the header */
+  height: 100%; /* Full height of the header */
+  opacity: 0.25; /* Adjust opacity to make it more transparent */
+  z-index: -1; /* Ensures it stays behind the content */
+}
+
+#blogheader h1 {
+  position: relative; /* Keeps the text above the pseudo-element */
+  z-index: 1; /* Ensures the h1 is above the ::before background */
+  color: #251555; /* Adjust text color for readability */
+  font-family: "Pangolin", sans-serif; /* Keep your font styling */
+  font-size: 5vw; /* Adjust font size */
+  margin: 0; /* Remove default margin */
+  background-color: transparent;
+}
+
+/* Blog Section Styling */
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(333px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Gaps between grid items */
+  padding: 20px;
+  margin-top: 20px; /* Gap between header and first row of blogs */
+}
+
+.blog {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center-align the content */
+  gap: 10px; /* Gap between image and text */
+  text-align: center; /* Center text below the image */
+}
+.blog a {
+  text-decoration: none; /* Remove underline from links */
+  color: #251555; /* Text color */
+  font-family: "Gentium Book Plus", serif; /* Keep font consistent */
+  font-size: 1.2rem; /* Adjust text size */
+  margin-top: 10px; /* Add space between image and text */
+}
+
+.blog img {
+  width: 350px; /* Fixed width for all images */
+  height: 350px; /* Fixed height to make them square */
+  object-fit: cover; /* Ensures the image fills the square while maintaining aspect ratio */
+  border-radius: 10px; /* Optional: rounded corners for styling */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for styling */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.blog img:hover {
+  transform: scale(1.07); /* Slight zoom effect on hover */
+}
+
+.dancesection img{
+  width:40vw; 
+  height:auto; 
+  border-radius:10%; 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for styling */
 }
