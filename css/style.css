@@ -222,61 +222,60 @@ nav #homeicon{
   background-color: transparent;
 }
 
-/* Blog Section Styling */
 section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(333px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Gaps between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(333px, 1fr)); 
+  gap: 20px; 
   padding: 20px;
-  margin-top: 20px; /* Gap between header and first row of blogs */
+  margin-top: 20px; 
 }
 
 .blog {
   display: flex;
-  flex-direction: column; /* Stack image and text vertically */
-  align-items: center; /* Center-align the content */
-  gap: 10px; /* Gap between image and text */
-  text-align: center; /* Center text below the image */
+  flex-direction: column; 
+  align-items: center;
+  gap: 10px;
+  text-align: center; 
 }
 .blog a {
-  text-decoration: none; /* Remove underline from links */
-  color: #251555; /* Text color */
-  font-family: "Gentium Book Plus", serif; /* Keep font consistent */
-  font-size: 1.2rem; /* Adjust text size */
-  margin-top: 10px; /* Add space between image and text */
+  text-decoration: none; 
+  color: #251555;
+  font-family: "Gentium Book Plus", serif; 
+  font-size: 1.2rem;
+  margin-top: 10px; 
 }
 
 .blog img {
-  width: 350px; /* Fixed width for all images */
-  height: 350px; /* Fixed height to make them square */
-  object-fit: cover; /* Ensures the image fills the square while maintaining aspect ratio */
-  border-radius: 10px; /* Optional: rounded corners for styling */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for styling */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  width: 350px; 
+  height: 350px; 
+  object-fit: cover; 
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease; 
 }
 
 .blog img:hover {
-  transform: scale(1.07); /* Slight zoom effect on hover */
+  transform: scale(1.07); 
 }
 
 .dancesection img{
   width:40vw; 
   height:auto; 
   border-radius:10%; 
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for styling */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
 }
 .dancesection {
   display: flex;
-  align-items: flex-start; /* Align items at the top */
-  gap: 1rem; /* Adds spacing between the image/iframe and text */
-  margin-bottom: 2rem; /* Adds space between sections */
-  flex-direction: column; /* Stacks items vertically by default */
-  align-items: center; /* Centers the content */
+  align-items: flex-start; 
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .dancesection p, 
 .dancesection h3{
-  flex: 1; /* Ensures the text takes up the remaining space */
+  flex: 1; 
 }
 .dancesection a{
   text-decoration:none;
@@ -286,11 +285,11 @@ section {
   font-style:italic;
   text-decoration-color:rgb(188, 86, 101);
 }
-.dancesection .dancetext {
+.dancesection .dancetext , .bucketsection .buckettext{
   display: flex;
-  flex-direction: column; /* Stacks children (h3 and p) vertically */
-  gap: 0.5rem; /* Adds space between h3 and p */
-  text-align: center; /* Center-align text for better mobile readability */
+  flex-direction: column; 
+  gap: 0.5rem;
+  text-align: center; 
   font-family: "Gentium Book Plus";
   margin:1%;
 }
@@ -301,36 +300,34 @@ section {
 
 .dancesection img,
 .dancesection iframe {
-  width: 80vw; /* Suitable size for smaller screens */
-  flex-shrink: 0; /* Prevents the media from shrinking */
+  width: 80vw; 
+  flex-shrink: 0; 
 }
 
-/* For larger screens, layout items side by side */
 @media (min-width: 750px) {
   .dancesection {
-    flex-direction: row; /* Align items side by side */
-    align-items: center; /* Align text at the top */
-    gap: 1rem; /* Space between the image/iframe and text */
+    flex-direction: row; 
+    align-items: center; 
+    gap: 1rem; 
   }
 
   .dancesection img,
   .dancesection iframe {
-    width: 40vw; /* Adjust width for larger screens */
+    width: 40vw; 
   }
 
   .dancesection .dancetext {
-    text-align: left; /* Align text to the left for larger screens */
+    text-align: left; 
   }
   .dancesection:nth-child(odd) {
     flex-direction: row-reverse;
   }
 
-  /* For even divs: Image/iframe on the right, text on the left */
   .dancesection:nth-child(even) {
     flex-direction: row;
   }
 }
-#ohio{
+#ohio, #mala{
   color:#BB0000;
 }
 
@@ -340,10 +337,73 @@ section {
 #dsd{
   color:#BF5700;
 }
-#charli{
+#charli, #vegas{
   color:#a57d46;
 }
 iframe{
   width: 560px;
   height: 315px;
+}
+
+/* Base styles */
+.bucketsection:nth-child(odd) {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  border: 3px solid #1d712e;
+  border-radius:10px;
+  margin: 8px;
+}
+.bucketsection:nth-child(even) {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  border: 3px solid #a82727;
+  border-radius:10px;
+  margin: 8px;
+}
+/* Ensure text is always above the TikTok embed */
+.bucketsection .text-content {
+  order: 1; /* Text comes first */
+}
+
+.bucketsection blockquote {
+  order: 2; /* TikTok embed comes second */
+}
+
+/* Responsive Grid Layout */
+.alllist {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 16px;
+  padding: 16px;
+}
+
+/* Medium screens (tablets and small desktops) */
+@media (min-width: 768px) {
+  .alllist {
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .alllist {
+      grid-template-columns: repeat(3, 1fr); /* Three columns */
+  }
+}
+
+.topmeow{
+  font-size:large;
+}
+#bow{
+  color:#a6077b;
+}
+#skate{
+  color:rgb(5, 93, 182);
+}
+#paint{
+  color:#5a39bf;
 }
