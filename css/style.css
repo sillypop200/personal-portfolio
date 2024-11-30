@@ -265,3 +265,78 @@ section {
   border-radius:10%; 
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Optional: shadow for styling */
 }
+.dancesection {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  gap: 1rem; /* Adds spacing between the image/iframe and text */
+  margin-bottom: 2rem; /* Adds space between sections */
+  flex-direction: column; /* Stacks items vertically by default */
+  align-items: center; /* Centers the content */
+}
+
+.dancesection p, 
+.dancesection h3 {
+  flex: 1; /* Ensures the text takes up the remaining space */
+}
+
+.dancesection .dancetext {
+  display: flex;
+  flex-direction: column; /* Stacks children (h3 and p) vertically */
+  gap: 0.5rem; /* Adds space between h3 and p */
+  text-align: center; /* Center-align text for better mobile readability */
+  font-family: "Gentium Book Plus";
+  margin:1%;
+}
+
+.dancesection .dancetext p{
+  color:#3b2920;
+}
+
+.dancesection img,
+.dancesection iframe {
+  width: 80vw; /* Suitable size for smaller screens */
+  flex-shrink: 0; /* Prevents the media from shrinking */
+}
+
+/* For larger screens, layout items side by side */
+@media (min-width: 750px) {
+  .dancesection {
+    flex-direction: row; /* Align items side by side */
+    align-items: center; /* Align text at the top */
+    gap: 1rem; /* Space between the image/iframe and text */
+  }
+
+  .dancesection img,
+  .dancesection iframe {
+    width: 40vw; /* Adjust width for larger screens */
+  }
+
+  .dancesection .dancetext {
+    text-align: left; /* Align text to the left for larger screens */
+  }
+  .dancesection:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  /* For even divs: Image/iframe on the right, text on the left */
+  .dancesection:nth-child(even) {
+    flex-direction: row;
+  }
+}
+#ohio{
+  color:#BB0000;
+}
+
+#sapa{
+  color:#7B3F00;
+}
+#dsd{
+  color:#BF5700;
+}
+#charli{
+  color:#a57d46;
+}
+iframe{
+  width: 560px;
+  height: 315px;
+}
