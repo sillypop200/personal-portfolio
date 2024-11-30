@@ -284,8 +284,7 @@ section {
 .dancesection a:hover{
   text-decoration:underline;
   font-style:italic;
-  color:rgb(4, 4, 55);
-
+  text-decoration-color:rgb(188, 86, 101);
 }
 .dancesection .dancetext {
   display: flex;
