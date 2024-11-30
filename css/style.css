@@ -275,10 +275,18 @@ section {
 }
 
 .dancesection p, 
-.dancesection h3 {
+.dancesection h3{
   flex: 1; /* Ensures the text takes up the remaining space */
 }
+.dancesection a{
+  text-decoration:none;
+}
+.dancesection a:hover{
+  text-decoration:underline;
+  font-style:italic;
+  color:rgb(4, 4, 55);
 
+}
 .dancesection .dancetext {
   display: flex;
   flex-direction: column; /* Stacks children (h3 and p) vertically */
