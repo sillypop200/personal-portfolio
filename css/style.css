@@ -24,11 +24,11 @@
     font-family: "Pangolin";
     margin:0;
     color:#251555;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid #9a8fe5; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
+    overflow: hidden; 
+    border-right: .15em solid #9a8fe5; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
     animation: 
         typing 3.5s steps(35, end),
         blink-caret .75s step-end infinite;
@@ -49,7 +49,6 @@
     to { width: 32% }
   }
   
-/* The typewriter cursor effect */
 @keyframes blink-caret {
 from, to { border-color: transparent }
 50% { border-color: #9a8fe5; }
@@ -61,7 +60,6 @@ from, to { border-color: transparent }
     border: 1px solid #f1f1f1;
   }
   
-  /* This container is needed to position the front and back side */
   .flip-box-inner {
     position: relative;
     width: 20vw;
@@ -71,26 +69,22 @@ from, to { border-color: transparent }
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-box:hover .flip-box-inner , .flip-box:focus .flip-box-inner{
     transform: rotateY(180deg);
   }
   
-  /* Position the front and back side */
   .flip-box-front, .flip-box-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
   }
   
-  /* Style the front side (fallback if image is missing) */
   .flip-box-front {
     color: black;
   }
   
-  /* Style the back side */
   .flip-box-back {
     color: white;
     transform: rotateY(180deg);
@@ -106,10 +100,10 @@ from, to { border-color: transparent }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky; /* Makes the navbar sticky */
-    top: 0; /* Sticks the navbar at the top of the page */
-    background-color: #f8f4ff; /* Ensure the navbar background remains visible when scrolling */
-    z-index: 1000; /* Keeps it on top of other content */
+    position: sticky; 
+    top: 0;
+    background-color: #f8f4ff; 
+    z-index: 1000; 
     padding-bottom:15px;
     padding-top:15px;
   }
@@ -123,23 +117,23 @@ from, to { border-color: transparent }
     font-size: 1.5rem;
   }
   .icon {
-    margin-left: 10px; /* Adds space between icons */
+    margin-left: 10px; 
   }
   
   .nav-left {
     display: flex;
-    gap: 10px; /* Adds space between left-aligned links */
+    gap: 10px; 
   }
   
   .nav-right {
     display: flex;
-    gap: 10px; /* Adds space between icons */
+    gap: 10px; 
   }
 
   .nav-center {
-    position: absolute; /* Position it independently of the flex container */
-    left: 50%; /* Move to the center horizontally */
-    transform: translateX(-50%); /* Adjust for element width */
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
   }
 
   nav a:hover{
@@ -149,36 +143,36 @@ from, to { border-color: transparent }
   }
 
   nav {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center-align items */
+    flex-direction: column; 
+    align-items: center; 
   }
 
   .nav-left, .nav-right {
     justify-content: center;
-    margin-bottom: 10px; /* Add spacing between groups */
+    margin-bottom: 10px; 
   }
 
   .nav-center {
-    position: static; /* Disable absolute positioning */
-    transform: none; /* Reset transformation */
+    position: static; 
+    transform: none; 
     margin-bottom: 10px;
   }
 
 @media (min-width: 800px) {
   nav {
-    flex-direction: row; /* Items aligned horizontally for larger screens */
-    align-items: center; /* Center-align items */
+    flex-direction: row; 
+    align-items: center; 
   }
 
   .nav-left, .nav-right {
     justify-content: space-between;
-    margin-bottom: 0; /* Remove extra spacing for larger screens */
+    margin-bottom: 0; 
   }
 
   .nav-center {
-    position: absolute; /* Keep it centered horizontally */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for element width */
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
     margin-bottom: 0;
   }
 }
@@ -197,61 +191,61 @@ nav #homeicon{
 }
 
 #blogheader::before {
-  content: ""; /* Pseudo-element requires content */
-  background-image: url('../img/coi.jpg'); /* Path to your background image */
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents repeating */
+  content: ""; 
+  background-image: url('../img/coi.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 
-  position: absolute; /* Allows it to fill the #blogheader */
+  position: absolute; 
   top: 0;
   left: 0;
-  width: 100%; /* Full width of the header */
-  height: 100%; /* Full height of the header */
-  opacity: 0.25; /* Adjust opacity to make it more transparent */
-  z-index: -1; /* Ensures it stays behind the content */
+  width: 100%; 
+  height: 100%; 
+  opacity: 0.25; 
+  z-index: -1; 
 }
 
 #blogheader h1, #matchaheader h1, #profheader h1{
-  position: relative; /* Keeps the text above the pseudo-element */
-  z-index: 1; /* Ensures the h1 is above the ::before background */
-  color: #251555; /* Adjust text color for readability */
-  font-family: "Pangolin", sans-serif; /* Keep your font styling */
-  font-size: 5vw; /* Adjust font size */
-  margin: 0; /* Remove default margin */
+  position: relative; 
+  z-index: 1;
+  color: #251555; 
+  font-family: "Pangolin", sans-serif; 
+  font-size: 5vw; 
+  margin: 0; 
   background-color: transparent;
 }
 
 #matchaheader::before {
-  content: ""; /* Pseudo-element requires content */
-  background-image: url('../img/greenhead.jpg'); /* Path to your background image */
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents repeating */
+  content: ""; 
+  background-image: url('../img/greenhead.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
 
-  position: absolute; /* Allows it to fill the #blogheader */
+  position: absolute; 
   top: 0;
   left: 0;
-  width: 100%; /* Full width of the header */
-  height: 100%; /* Full height of the header */
-  opacity: 0.25; /* Adjust opacity to make it more transparent */
-  z-index: -1; /* Ensures it stays behind the content */
+  width: 100%; 
+  height: 100%; 
+  opacity: 0.25; 
+  z-index: -1; 
 }
 
 #profheader::before {
-  content: ""; /* Pseudo-element requires content */
-  background-image: url('../img/books.jpg'); /* Path to your background image */
-  background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents repeating */
+  content: ""; 
+  background-image: url('../img/books.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 
-  position: absolute; /* Allows it to fill the #blogheader */
+  position: absolute; 
   top: 0;
   left: 0;
-  width: 100%; /* Full width of the header */
-  height: 100%; /* Full height of the header */
-  opacity: 0.25; /* Adjust opacity to make it more transparent */
-  z-index: -1; /* Ensures it stays behind the content */
+  width: 100%; 
+  height: 100%; 
+  opacity: 0.25;
+  z-index: -1; 
 }
 
 section {
@@ -379,7 +373,6 @@ iframe{
   height: 315px;
 }
 
-/* Base styles */
 .bucketsection:nth-child(odd) {
   display: flex;
   flex-direction: column;
@@ -398,37 +391,34 @@ iframe{
   border-radius:10px;
   margin: 8px;
 }
-/* Ensure text is always above the TikTok embed */
+
 .bucketsection .text-content {
-  order: 1; /* Text comes first */
+  order: 1; 
 }
 
 .bucketsection blockquote {
-  order: 2; /* TikTok embed comes second */
+  order: 2; 
 }
 
-/* Responsive Grid Layout */
 .alllist {
   display: grid;
-  grid-template-columns: 1fr; /* Single column by default */
+  grid-template-columns: 1fr; 
   gap: 16px;
   padding: 16px;
 }
 
-/* Medium screens (tablets and small desktops) */
 @media (min-width: 768px) {
   .alllist {
-      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      grid-template-columns: repeat(2, 1fr); 
   }
   .meow{
     width:40vw;
   }
 }
 
-/* Large screens (desktops) */
 @media (min-width: 1200px) {
   .alllist {
-      grid-template-columns: repeat(3, 1fr); /* Three columns */
+      grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -447,7 +437,7 @@ iframe{
 
 .imagecontain {
   position: relative;
-  width: 100%; /* Adjust as needed */
+  width: 100%; 
   margin: 10px;
 }
 
@@ -464,18 +454,18 @@ img {
   width: 350px;
   border-radius:10px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Black background with transparency */
+  background-color: rgba(0, 0, 0, 0.6); 
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition */
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
 }
 
 .imagecontain:hover .image-caption , .imagecontain:focus .image-caption{
-  opacity: 1; /* Show caption on hover */
+  opacity: 1; 
 }
 
 .image-caption h1, .image-caption p{
@@ -496,65 +486,65 @@ img {
 }
 footer {
   display: flex;
-  flex-direction: column; /* Stack h1 above the icons */
-  align-items: center; /* Center everything horizontally */
+  flex-direction: column; 
+  align-items: center; 
   padding: 20px;
 }
 
 footer h1 {
-  font-size: 19px; /* Adjust heading size */
-  margin-bottom: 7px; /* Add spacing between h1 and the icons */
-  color: #490909; /* Set text color */
+  font-size: 19px; 
+  margin-bottom: 7px; 
+  color: #490909; 
   font-family:"Pangolin";
 }
 
 footer .icon {
-  margin: 0 10px; /* Add spacing between the icons */
-  font-size: 24px; /* Adjust icon size */
-  color: #333; /* Default icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
+  margin: 0 10px; 
+  font-size: 24px; 
+  color: #333; 
+  transition: color 0.3s ease; 
   text-decoration: none;
-  display: inline-block; /* Keep icons inline */
+  display: inline-block; 
 }
 
 footer .icon:hover {
-  color: #a6077b; /* Change color on hover */
+  color: #a6077b; 
 }
 
 footer .icon-container {
-  display: flex; /* Arrange icons in a row */
-  justify-content: center; /* Center icons horizontally */
+  display: flex;
+  justify-content: center; 
 }
 
 .meow{
-  display: inline-block; /* Makes the headers sit next to each other */
-  width: 850px; /* Adjust as needed */
-  height: 350px; /* Same as width to ensure a circle */
-  text-align: center; /* Center text horizontally */
-  line-height: 150px; /* Center text vertically (same as height) */
-  margin: 10px; /* Adds spacing between the circles */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow */
+  display: inline-block; 
+  width: 850px; 
+  height: 350px; 
+  text-align: center; 
+  line-height: 150px; 
+  margin: 10px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .meow h1 {
-  font-size: 16px; /* Adjust text size to fit in the circle */
-  margin: 0; /* Remove default margin */
-  line-height: normal; /* Reset line height for multi-line text */
+  font-size: 16px; 
+  margin: 0; 
+  line-height: normal; 
 }
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation: none !important; /* Disables all animations */
-    transition: none !important; /* Disables all transitions */
-    scroll-behavior: auto !important; /* Removes smooth scrolling */
+    animation: none !important; 
+    transition: none !important; 
+    scroll-behavior: auto !important; 
   }
 
   #name_banner h1 {
-    animation: none; /* Disables typing effect and caret blink animation */
+    animation: none; 
   }
 
   .flip-box-inner {
-    transition: none; /* Removes the flipping animation */
+    transition: none;
   }
 
   .blog img:hover {
@@ -562,16 +552,16 @@ footer .icon-container {
   }
 
   .image-caption {
-    transition: none; /* Disables the fade-in effect for captions */
+    transition: none; 
   }
 
   .imagecontain:hover .image-caption, 
   .imagecontain:focus .image-caption {
-    opacity: 1; /* Ensure captions are still visible without animation */
+    opacity: 1; 
   }
 
   footer .icon {
-    transition: none; /* Disables hover effect on footer icons */
+    transition: none; 
   }
   #all a:hover{
     transform: scale(1.00); 
@@ -580,78 +570,78 @@ footer .icon-container {
 
 @media (prefers-color-scheme: dark) {
   * {
-    background-color: #0b3d0b; /* Dark green background for the entire page */
-    color: #d4edda; /* Light greenish text color for better contrast */
+    background-color: #0b3d0b;
+    color: #d4edda; 
   }
 
   #name_banner h1 {
-    color: #a3c9a8; /* Lighter green for headings */
-    border-right: .15em solid #74a974; /* Adjust the typing cursor color */
+    color: #a3c9a8;
+    border-right: .15em solid #74a974;
   }
 
   nav {
-    background-color: #1a572e; /* Dark green navbar background */
+    background-color: #1a572e;
   }
 
   nav a {
-    color: #d4edda; /* Light green text for navbar links */
+    color: #d4edda; 
   }
 
   nav a:hover {
-    color: #a3c9a8; /* Brighter green for hover effect */
+    color: #a3c9a8;
   }
 
   footer {
-    background-color: #1a572e; /* Dark green background for footer */
-    color: #d4edda; /* Light green text for footer */
+    background-color: #1a572e;
+    color: #d4edda; 
   }
 
   footer .icon {
-    color: #d4edda; /* Light green for icons */
+    color: #d4edda;
   }
 
   footer .icon:hover {
-    color: #74a974; /* Slightly brighter green for hover effect */
+    color: #74a974;
   }
 
   .blog a {
-    color: #d4edda; /* Adjust blog links to light green */
+    color: #d4edda; 
   }
 
   .blog img {
-    box-shadow: 0 5px 10px rgba(0, 255, 0, 0.2); /* Adjust shadow to a greenish tint */
+    box-shadow: 0 5px 10px rgba(0, 255, 0, 0.2); 
   }
 
   .dancesection img {
-    box-shadow: 0 5px 10px rgba(0, 255, 0, 0.2); /* Greenish shadow for dance section images */
+    box-shadow: 0 5px 10px rgba(0, 255, 0, 0.2); 
   }
 
   .flip-box {
-    border-color: transparent; /* Darker green for flip-box borders */
+    border-color: transparent; 
   }
 
   .flip-box-back {
-    background-color: #0b3d0b;; /* Dark green for flip-box back */
-    color: #d4edda; /* Light green text */
+    background-color: #0b3d0b;
+    color: #d4edda; 
   }
 
   .flip-box-front {
-    background-color: #0b3d0b; /* Dark green for flip-box front */
-    color: #d4edda; /* Light green text */
+    background-color: #0b3d0b; 
+    color: #d4edda;
   }
 
   #blogheader::before,
   #matchaheader::before,
   #profheader::before {
-    background-color: rgba(11, 61, 11, 0.8); /* Dark green overlay for headers */
+    background-color: rgba(11, 61, 11, 0.8); 
   }
 
   #blogheader h1, #matchaheader h1, #profheader h1, footer h1, nav a i, nav #homeicon, .dancesection .dancetext p, .blog{
-    color: #a3c9a8; /* Adjust header text color */
+    color: #a3c9a8;
   }
 
   .image-caption {
-    background-color: rgba(0, 61, 0, 0.8); /* Dark green background for captions */
+    background-color: rgba(0, 61, 0, 0.8); 
   }
   #mala, #paint, #bow, #vegas, #skate, #ohio, #charli, #sapa, #dsd{
     color:white;
@@ -662,7 +652,7 @@ footer .icon-container {
   width:80vw;
 }
 #left h1, #right h1 {
-  font-size: clamp(1.5rem, 3.9vw, 5.0rem); /* Larger font size for bigger screens */
+  font-size: clamp(1.5rem, 3.9vw, 5.0rem); 
 }
 #all a:hover{
   font-style: italic;
