@@ -420,6 +420,9 @@ iframe{
   .alllist {
       grid-template-columns: repeat(2, 1fr); /* Two columns */
   }
+  .meow{
+    width:40vw;
+  }
 }
 
 /* Large screens (desktops) */
@@ -656,12 +659,18 @@ footer .icon-container {
 }
 
 .meow{
-  width:780px;
+  width:80vw;
 }
 #left h1, #right h1 {
-  font-size: clamp(1.5rem, 5vw, 5.0rem); /* Larger font size for bigger screens */
+  font-size: clamp(1.5rem, 3.9vw, 5.0rem); /* Larger font size for bigger screens */
 }
 #all a:hover{
   font-style: italic;
   transform: scale(1.07); 
+}
+@media (min-width: 700px) {
+
+  .meow{
+    width:40vw;
+  }
 }
