@@ -460,3 +460,8 @@ img {
 .image-caption h1, .image-caption p{
   background-color: transparent !important;
 }
+.blog{
+  font-family: "Gentium Book Plus";
+  font-size:larger;
+  color:#7B3F00;
+}
