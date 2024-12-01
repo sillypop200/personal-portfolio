@@ -187,7 +187,7 @@ nav #homeicon{
   color:purple;
 }
 
-#blogheader {
+#blogheader, #matchaheader {
   position: relative; 
   color: white; 
   padding: 100px 20px;
@@ -212,7 +212,7 @@ nav #homeicon{
   z-index: -1; /* Ensures it stays behind the content */
 }
 
-#blogheader h1 {
+#blogheader h1, #matchaheader h1{
   position: relative; /* Keeps the text above the pseudo-element */
   z-index: 1; /* Ensures the h1 is above the ::before background */
   color: #251555; /* Adjust text color for readability */
@@ -220,6 +220,22 @@ nav #homeicon{
   font-size: 5vw; /* Adjust font size */
   margin: 0; /* Remove default margin */
   background-color: transparent;
+}
+
+#matchaheader::before {
+  content: ""; /* Pseudo-element requires content */
+  background-image: url('../img/greenhead.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+
+  position: absolute; /* Allows it to fill the #blogheader */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the header */
+  height: 100%; /* Full height of the header */
+  opacity: 0.25; /* Adjust opacity to make it more transparent */
+  z-index: -1; /* Ensures it stays behind the content */
 }
 
 section {
@@ -406,4 +422,41 @@ iframe{
 }
 #paint{
   color:#5a39bf;
+}
+
+.imagecontain {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  margin: 10px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  border-radius:10px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Black background with transparency */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.imagecontain:hover .image-caption {
+  opacity: 1; /* Show caption on hover */
+}
+
+.image-caption h1, .image-caption p{
+  background-color: transparent !important;
 }
