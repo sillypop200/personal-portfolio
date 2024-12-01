@@ -72,7 +72,7 @@ from, to { border-color: transparent }
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-box:hover .flip-box-inner {
+  .flip-box:hover .flip-box-inner , .flip-box:focus .flip-box-inner{
     transform: rotateY(180deg);
   }
   
@@ -453,7 +453,7 @@ img {
   transition: opacity 0.3s ease; /* Smooth transition */
 }
 
-.imagecontain:hover .image-caption {
+.imagecontain:hover .image-caption , .imagecontain:focus .image-caption{
   opacity: 1; /* Show caption on hover */
 }
 
