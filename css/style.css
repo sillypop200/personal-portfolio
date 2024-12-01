@@ -187,7 +187,7 @@ nav #homeicon{
   color:purple;
 }
 
-#blogheader, #matchaheader {
+#blogheader, #matchaheader, #profheader {
   position: relative; 
   color: white; 
   padding: 100px 20px;
@@ -212,7 +212,7 @@ nav #homeicon{
   z-index: -1; /* Ensures it stays behind the content */
 }
 
-#blogheader h1, #matchaheader h1{
+#blogheader h1, #matchaheader h1, #profheader h1{
   position: relative; /* Keeps the text above the pseudo-element */
   z-index: 1; /* Ensures the h1 is above the ::before background */
   color: #251555; /* Adjust text color for readability */
@@ -225,6 +225,22 @@ nav #homeicon{
 #matchaheader::before {
   content: ""; /* Pseudo-element requires content */
   background-image: url('../img/greenhead.jpg'); /* Path to your background image */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+
+  position: absolute; /* Allows it to fill the #blogheader */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the header */
+  height: 100%; /* Full height of the header */
+  opacity: 0.25; /* Adjust opacity to make it more transparent */
+  z-index: -1; /* Ensures it stays behind the content */
+}
+
+#profheader::before {
+  content: ""; /* Pseudo-element requires content */
+  background-image: url('../img/books.jpg'); /* Path to your background image */
   background-size: cover; /* Ensures the image covers the entire area */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating */
@@ -459,9 +475,66 @@ img {
 
 .image-caption h1, .image-caption p{
   background-color: transparent !important;
+  margin-left:3px;
+  margin-right:3px;
 }
 .blog{
   font-family: "Gentium Book Plus";
-  font-size:larger;
+  font-size:x-large;
   color:#7B3F00;
+}
+.blog h1{
+  font-size:25px;
+}
+.blog p{
+  font-size:19px;
+}
+footer {
+  display: flex;
+  flex-direction: column; /* Stack h1 above the icons */
+  align-items: center; /* Center everything horizontally */
+  padding: 20px;
+}
+
+footer h1 {
+  font-size: 19px; /* Adjust heading size */
+  margin-bottom: 7px; /* Add spacing between h1 and the icons */
+  color: #490909; /* Set text color */
+  font-family:"Pangolin";
+}
+
+footer .icon {
+  margin: 0 10px; /* Add spacing between the icons */
+  font-size: 24px; /* Adjust icon size */
+  color: #333; /* Default icon color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+  text-decoration: none;
+  display: inline-block; /* Keep icons inline */
+}
+
+footer .icon:hover {
+  color: #a6077b; /* Change color on hover */
+}
+
+footer .icon-container {
+  display: flex; /* Arrange icons in a row */
+  justify-content: center; /* Center icons horizontally */
+}
+
+.meow{
+  display: inline-block; /* Makes the headers sit next to each other */
+  width: 350; /* Adjust as needed */
+  height: 350px; /* Same as width to ensure a circle */
+  border-radius: 50%; /* Makes it a circle */
+  background-color: #f0f0f0; /* Set a background color */
+  text-align: center; /* Center text horizontally */
+  line-height: 150px; /* Center text vertically (same as height) */
+  margin: 10px; /* Adds spacing between the circles */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow */
+}
+
+.meow h1 {
+  font-size: 16px; /* Adjust text size to fit in the circle */
+  margin: 0; /* Remove default margin */
+  line-height: normal; /* Reset line height for multi-line text */
 }
