@@ -100,7 +100,7 @@ from, to { border-color: transparent }
     font-family: "Gentium Book Plus";
     text-decoration: none;
     margin: 0 10px;
-    font-size: 1.2rem;
+    font-size: 1.5rem!important;
   }
   nav {
     display: flex;
@@ -307,6 +307,7 @@ section {
 
 .dancesection p, 
 .dancesection h3{
+  
   flex: 1; 
 }
 .dancesection a{
@@ -328,6 +329,7 @@ section {
 
 .dancesection .dancetext p{
   color:#3b2920;
+  font-size:larger; 
 }
 
 .dancesection img,
@@ -523,10 +525,8 @@ footer .icon-container {
 
 .meow{
   display: inline-block; /* Makes the headers sit next to each other */
-  width: 350; /* Adjust as needed */
+  width: 850px; /* Adjust as needed */
   height: 350px; /* Same as width to ensure a circle */
-  border-radius: 50%; /* Makes it a circle */
-  background-color: #f0f0f0; /* Set a background color */
   text-align: center; /* Center text horizontally */
   line-height: 150px; /* Center text vertically (same as height) */
   margin: 10px; /* Adds spacing between the circles */
@@ -537,4 +537,131 @@ footer .icon-container {
   font-size: 16px; /* Adjust text size to fit in the circle */
   margin: 0; /* Remove default margin */
   line-height: normal; /* Reset line height for multi-line text */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important; /* Disables all animations */
+    transition: none !important; /* Disables all transitions */
+    scroll-behavior: auto !important; /* Removes smooth scrolling */
+  }
+
+  #name_banner h1 {
+    animation: none; /* Disables typing effect and caret blink animation */
+  }
+
+  .flip-box-inner {
+    transition: none; /* Removes the flipping animation */
+  }
+
+  .blog img:hover {
+    transform: scale(1.00); 
+  }
+
+  .image-caption {
+    transition: none; /* Disables the fade-in effect for captions */
+  }
+
+  .imagecontain:hover .image-caption, 
+  .imagecontain:focus .image-caption {
+    opacity: 1; /* Ensure captions are still visible without animation */
+  }
+
+  footer .icon {
+    transition: none; /* Disables hover effect on footer icons */
+  }
+  #all a:hover{
+    transform: scale(1.00); 
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    background-color: #0b3d0b; /* Dark green background for the entire page */
+    color: #d4edda; /* Light greenish text color for better contrast */
+  }
+
+  #name_banner h1 {
+    color: #a3c9a8; /* Lighter green for headings */
+    border-right: .15em solid #74a974; /* Adjust the typing cursor color */
+  }
+
+  nav {
+    background-color: #1a572e; /* Dark green navbar background */
+  }
+
+  nav a {
+    color: #d4edda; /* Light green text for navbar links */
+  }
+
+  nav a:hover {
+    color: #a3c9a8; /* Brighter green for hover effect */
+  }
+
+  footer {
+    background-color: #1a572e; /* Dark green background for footer */
+    color: #d4edda; /* Light green text for footer */
+  }
+
+  footer .icon {
+    color: #d4edda; /* Light green for icons */
+  }
+
+  footer .icon:hover {
+    color: #74a974; /* Slightly brighter green for hover effect */
+  }
+
+  .blog a {
+    color: #d4edda; /* Adjust blog links to light green */
+  }
+
+  .blog img {
+    box-shadow: 0 5px 10px rgba(0, 255, 0, 0.2); /* Adjust shadow to a greenish tint */
+  }
+
+  .dancesection img {
+    box-shadow: 0 5px 10px rgba(0, 255, 0, 0.2); /* Greenish shadow for dance section images */
+  }
+
+  .flip-box {
+    border-color: transparent; /* Darker green for flip-box borders */
+  }
+
+  .flip-box-back {
+    background-color: #0b3d0b;; /* Dark green for flip-box back */
+    color: #d4edda; /* Light green text */
+  }
+
+  .flip-box-front {
+    background-color: #0b3d0b; /* Dark green for flip-box front */
+    color: #d4edda; /* Light green text */
+  }
+
+  #blogheader::before,
+  #matchaheader::before,
+  #profheader::before {
+    background-color: rgba(11, 61, 11, 0.8); /* Dark green overlay for headers */
+  }
+
+  #blogheader h1, #matchaheader h1, #profheader h1, footer h1, nav a i, nav #homeicon, .dancesection .dancetext p, .blog{
+    color: #a3c9a8; /* Adjust header text color */
+  }
+
+  .image-caption {
+    background-color: rgba(0, 61, 0, 0.8); /* Dark green background for captions */
+  }
+  #mala, #paint, #bow, #vegas, #skate, #ohio, #charli, #sapa, #dsd{
+    color:white;
+  }
+}
+
+.meow{
+  width:780px;
+}
+#left h1, #right h1 {
+  font-size: clamp(1.5rem, 5vw, 5.0rem); /* Larger font size for bigger screens */
+}
+#all a:hover{
+  font-style: italic;
+  transform: scale(1.07); 
 }
